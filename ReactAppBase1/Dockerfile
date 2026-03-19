@@ -7,7 +7,7 @@ WORKDIR /app
 RUN npm install -g serve
 
 # Copy built React files from artifact
-COPY dist ./dist
+COPY ReactAppBase1/dist ./dist
 
 # Expose port
 EXPOSE 80
