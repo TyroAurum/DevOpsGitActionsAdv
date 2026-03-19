@@ -49,5 +49,14 @@ jobs:
           name: react-app-build
           path: dist/
 
+      # - name: Run Tests
+      #   run: npm test
+
       - name: Run Tests
-        run: npm test
+        run: npm test -- --watchAll=false
+
+      - name: Check if build file exists
+        run: |
+          test -f dist/index.html && echo "Build file exists" || (echo "Build file does not exist" && exit 1)
+
+  
